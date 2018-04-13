@@ -103,7 +103,7 @@ class WickedPdf
 
   # Launch Chrome headless
   def launch_chrome(host, port, debug=false)
-    options = "--headless --disable-gpu --remote-debugging-port=#{port} --crash-dumps-dir=tmp about:blank"
+    options = "--headless --disable-gpu --remote-debugging-port=#{port} --crash-dumps-dir=tmp --no-sandbox about:blank"
     cmd = @exe_path.gsub(' ', '\ ') + ' ' + options
     print_command(cmd.inspect) if in_development_mode?
 
